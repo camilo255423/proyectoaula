@@ -44,7 +44,7 @@ public class BancoActividades extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		general = new ScrollView(this);
-		
+		setContentView(general);
 		capa1 = new LinearLayout(this);
 		capa1.setOrientation(LinearLayout.VERTICAL);
 		
@@ -55,7 +55,9 @@ public class BancoActividades extends Activity implements OnClickListener{
 		abrirBasedatos();
 		consulta();		
 		general.addView(capa1);
-		setContentView(general);	
+		if(box!=null) Log.d("null", "box no vale null");
+		else Log.d("null", "box  vale null");
+		box.setText("hola");
 		 //video_player_view.setVideoPath("/sdcard/video.mp4");
 		
 	}
@@ -102,8 +104,10 @@ public class BancoActividades extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		if(box==null) Log.d("null", "vale null");	
+		
 		switch (v.getId()){
-			
+		
 		case 1 : box.setText("uno");
 		 	     break;
 		case 2 : box.setText("dos");
